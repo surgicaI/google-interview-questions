@@ -24,6 +24,11 @@ for i in range(length):
 print('True')
 ```
 
+6. Merge Interval. Given a sorted list of non-overlapping intervals, merge a new interval in that list. [interview-bit](https://www.interviewbit.com/problems/merge-intervals/)  
+**Trick**: Write a function to check overlap between two intervals.  
+Then scan the intervals and fit the new interval at its location if it overlaps with some intervals.  
+*edge cases:* The new interval may not overlap with any of the intervals in the list and can be at the start or at the end.
+
 ## Stack Questions
 1. Given file system in <kbd>\t</kbd> delimited string, find longest absolute path of a file. [link](https://leetcode.com/problems/longest-absolute-file-path/#/description)  
 **Trick**: Append to the stack while entering a directory and pop while leaving.
@@ -38,8 +43,46 @@ print('True')
 2. Remove duplicates from the sting such that remaining string has smallest lexicographical ordering. [leetcode](https://leetcode.com/problems/remove-duplicate-letters/description/)  
 **Trick**: Maintain locations of all chars in an array. Try to print 'a' by testing if all characters on left of 'a' also have a duplicate on right side of a. Then do this for remaining characters.
 
+3. Kth row of pascal triangle. [Interview-bit](https://www.interviewbit.com/problems/kth-row-of-pascals-triangle/)  
+**Trick**: **Kth** row will have **k+1** elements if **K** starts from 0. `nC(r+1) = nCr * (n-r) / (r+1)`
+
+4. Given an array of integers, find max product of 3 elements.  [interview-bit](https://www.interviewbit.com/problems/highest-product/)   
+**Trick** Sort the list.
+cases:  
+(i) No positive number and no zero present in list.
+(ii) No positive number but zero is in list.
+(iii) Two positives and one negative.
+(iv) Two or more negatives and one or more positives.
+
 ## Dynamic Programming
 1. Minimum number of swaps required for arranging pairs adjacent to each other.[geeksforgeeks](http://www.geeksforgeeks.org/minimum-number-of-swaps-required-for-arranging-pairs-adjacent-to-each-other/)  
 **Tricks**: Start from left. Two possible options:  
 a. Either swap 2nd element with the pair of 1st  
-b. Swap 1st element with the pair of 2nd element.  
+b. Swap 1st element with the pair of 2nd element.
+
+2.Given string and a dict of words, return **true** if string can be broken into words in dict. **Word Break Problem** [interview-bit](https://www.interviewbit.com/problems/word-break/)  
+**Trick-1** Start from reverse to prevent maximum recursion depth issue.
+**Trick-2** Store lengths of words in dict and run a loop over these lengths.
+```
+def solve(self, start_index):
+    if start_index in self.my_map:
+        return self.my_map[start_index]
+    for length in self.lengths:
+        if start_index + length > self.length:
+            continue
+        word = self.string[start_index:start_index+length]
+        if start_index + length == self.length and word in self.dict:
+            self.my_map[start_index] = 1
+            return 1
+        elif start_index + length < self.length:
+            if word in self.dict and self.solve(start_index+length):
+                self.my_map[start_index] = 1
+                return 1
+    self.my_map[start_index] = 0
+    return 0
+```
+
+## Greedy algorithms
+1. Given a jumps array, reach last point in minimum jumps.  [interview-bit](https://www.interviewbit.com/problems/min-jumps-array/)  
+Can be solved using DP also.  
+**Trick** Stand at index `start_index = 0`. Keep a variable `max_reachable_index`. Scan from `start_index` to `max_reachable_index` and now stand at index for which `max_reachable_index` is maximum.
