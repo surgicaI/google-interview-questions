@@ -13,21 +13,18 @@
 4. Rearrange string, same characters appear atleast d distance apart. [geeksforgeeks](http://www.geeksforgeeks.org/rearrange-a-string-so-that-all-same-characters-become-at-least-d-distance-away/)  
 **Trick**: Sort by frequency`(use heap, have to remain sorted at all times)`. Maintain last `d` characters in a set. Always print most frequent character which is not in the set.
 
-5. Word-Squared? eg: True for "BALL AREA LEAD LADY" [leetcode](https://discuss.leetcode.com/topic/60617/find-if-a-word-square-they-read-the-same-horizontally-and-vertically-example-ball-area-lead-lady-return-true-if-a-given-sequence-is-a-word-square)  
-**Trick**: Just check if the matrix is symmetric or not:
-```
-for i in range(length):
-    for j in range(i):
-        if word[i][j] != word[j][i]:
-            print('False')
-            quit()
-print('True')
-```
-
-6. Merge Interval. Given a sorted list of non-overlapping intervals, merge a new interval in that list. [interview-bit](https://www.interviewbit.com/problems/merge-intervals/)  
+5. Merge Interval. Given a sorted list of non-overlapping intervals, merge a new interval in that list. [interview-bit](https://www.interviewbit.com/problems/merge-intervals/)  
 **Trick**: Write a function to check overlap between two intervals.  
 Then scan the intervals and fit the new interval at its location if it overlaps with some intervals.  
 *edge cases:* The new interval may not overlap with any of the intervals in the list and can be at the start or at the end.
+
+6. Given an array of integers, find max product of 3 elements.  [interview-bit](https://www.interviewbit.com/problems/highest-product/)   
+**Trick** Sort the list.
+cases:  
+(i) No positive number and no zero present in list.
+(ii) No positive number but zero is in list.
+(iii) Two positives and one negative.
+(iv) Two or more negatives and one or more positives.
 
 ## Stack Questions
 1. Given file system in <kbd>\t</kbd> delimited string, find longest absolute path of a file. [link](https://leetcode.com/problems/longest-absolute-file-path/#/description)  
@@ -46,21 +43,13 @@ Then scan the intervals and fit the new interval at its location if it overlaps 
 3. Kth row of pascal triangle. [Interview-bit](https://www.interviewbit.com/problems/kth-row-of-pascals-triangle/)  
 **Trick**: **Kth** row will have **k+1** elements if **K** starts from 0. `nC(r+1) = nCr * (n-r) / (r+1)`
 
-4. Given an array of integers, find max product of 3 elements.  [interview-bit](https://www.interviewbit.com/problems/highest-product/)   
-**Trick** Sort the list.
-cases:  
-(i) No positive number and no zero present in list.
-(ii) No positive number but zero is in list.
-(iii) Two positives and one negative.
-(iv) Two or more negatives and one or more positives.
-
 ## Dynamic Programming
 1. Minimum number of swaps required for arranging pairs adjacent to each other.[geeksforgeeks](http://www.geeksforgeeks.org/minimum-number-of-swaps-required-for-arranging-pairs-adjacent-to-each-other/)  
 **Tricks**: Start from left. Two possible options:  
 a. Either swap 2nd element with the pair of 1st  
 b. Swap 1st element with the pair of 2nd element.
 
-2.Given string and a dict of words, return **true** if string can be broken into words in dict. **Word Break Problem** [interview-bit](https://www.interviewbit.com/problems/word-break/)  
+2. Given string and a dict of words, return **true** if string can be broken into words in dict. **Word Break Problem** [interview-bit](https://www.interviewbit.com/problems/word-break/)  
 **Trick-1** Start from reverse to prevent maximum recursion depth issue.
 **Trick-2** Store lengths of words in dict and run a loop over these lengths.
 ```
