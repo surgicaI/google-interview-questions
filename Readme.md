@@ -26,7 +26,7 @@ cases:
 (iii) Two positives and one negative.
 (iv) Two or more negatives and one or more positives.
 
-7. Given a sorted array, remove duplicates in place.   [interview-bit](https://www.interviewbit.com/problems/remove-duplicates-from-sorted-array/)
+7. Given a sorted array, remove duplicates in place.   [interview-bit](https://www.interviewbit.com/problems/remove-duplicates-from-sorted-array/)  
 **Trick** Maintain two pointers.
 
 ## Linked List:
