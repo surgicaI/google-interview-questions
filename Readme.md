@@ -26,6 +26,13 @@ cases:
 (iii) Two positives and one negative.
 (iv) Two or more negatives and one or more positives.
 
+7. Given a sorted array, remove duplicates in place.   [interview-bit](https://www.interviewbit.com/problems/remove-duplicates-from-sorted-array/)
+**Trick** Maintain two pointers.
+
+## Linked List:
+1. Sort Linked list in O(nlogn) time and constant space. [interview-bit](https://www.interviewbit.com/problems/sort-list/)  
+**Trick** Use merge sort and recursion. Find mid point, sort two lists and merge them.(Technically recursion is not constant space solution)
+
 ## Stack Questions
 1. Given file system in <kbd>\t</kbd> delimited string, find longest absolute path of a file. [link](https://leetcode.com/problems/longest-absolute-file-path/#/description)  
 **Trick**: Append to the stack while entering a directory and pop while leaving.

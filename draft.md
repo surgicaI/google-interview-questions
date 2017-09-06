@@ -21,3 +21,25 @@ for i in range(length):
             quit()
 print('True')
 ```
+### [puzzle-Daughters ages](https://www.interviewbit.com/problems/daughters-ages/)
+Product of ages if 72. Sum is the number written on that wall. And oldest one plays piano.
+
+### [puzzle-Cross the bridge](https://www.interviewbit.com/problems/cross-the-bridge/)
+4 people have to cross the bridge, each take different time to cross the bridge [1min, 2min, 5min, 10min]. Have one flashlight. Minimum time for them to cross the bridge.
+
+### [puzzle-Cake cutting in half](https://www.interviewbit.com/problems/divide-the-cake/)
+Consider a rectangular cake with a rectangular section (of any size or orientation) removed from it. Is it possible to divide the cake exactly in half with only one cut?
+**Solution** There will always be one line passing through the center of both the rectangles.
+
+## [puzzle-egg and building problem](https://www.interviewbit.com/problems/eggs-and-building/)
+**Solution yet to be understood**
+
+TODO:
+n/3 repeat number in an array in linear time.
+merge overlap intervals.
+Insert an interval
+max non-negetive subarray
+grid unique paths
+wave array (linear time algorithm)
+[clone undirected graph](https://www.interviewbit.com/problems/clone-graph/)
+[capture region on board](https://www.interviewbit.com/problems/capture-regions-on-board/)
